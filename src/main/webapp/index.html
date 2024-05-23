@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banking Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("homeBG.jpeg");
+            background-repeat: no-repeat; 
+            background-size: cover; 
+            text-align: center;
+             
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+        input, select {
+            margin-bottom: 12px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .container {
+            max-width: 400px;
+             margin-left: 50px;
+        }
+        .mainDiv{
+        display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Banking Management System</h1>
+    <div class="mainDiv">
+    <div class="container">
+        <form action="LoginSignupServlet?action=loginUser" method="post">
+            <h2>User Login</h2>
+            <label for="username">User Full Name:</label>
+            <input type="text" id="username" name="" required>
+            <label for="username">Account Number:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+             
+             
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    
+    
+     <div class="container">
+        <form action="LoginSignupServlet?action=loginEmployee" method="post">
+            <h2>Bank Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="role">Role:</label>
+            <select id="role" name="role" required>
+                <option value="">Select role</option>
+                 
+                <option value="bank_accountant">Bank Accountant</option>
+                <option value="bank_clerk">Bank Clerk</option>
+                <option value="bank_manager">Bank Manager</option>
+            </select>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    
+    </div>
+    
+    
+</body>
+</html>

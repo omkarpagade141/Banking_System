@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Clerk Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            display: flex;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            
+            min-height: 70px;
+            border-bottom: #77a1d3 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        .main {
+            padding: 20px;
+            background: #fff;
+             
+            border-radius: 8px;
+            border: 1px solid black
+        }
+        .main h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Bank Clerk Dashboard</h1>
+    </div>
+</header>
+  
+<div class="container">
+    <div class="main">
+        <h2>Open New Account</h2>
+        <form action="bankclerk?action=open" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+             
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <input type="hidden" id="initialBalance" name="initialBalance" value="0">
+            <button type="submit" class="btn">Open Account</button>
+        </form>
+    </div>
+    <div class="main">
+        <h2>Update Existing Account</h2>
+        <form action="bankclerk?action=update" method="post">
+            <div class="form-group">
+                <label for="updateAccountNumber">Account Number:</label>
+                <input type="text" id="updateAccountNumber" name="updateAccountNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="newAddress">Update Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="newAddress">New Address:</label>
+                <input type="text" id="newAddress" name="newAddress">
+            </div>
+            
+            <div class="form-group">
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" name="newPassword">
+            </div>
+            <button type="submit" class="btn">Update Account</button>
+        </form>
+    </div>
+    <div class="main">
+        <h2>Generate Statement of Account</h2>
+        <form action="bankclerk?action=statement" method="get">
+            <div class="form-group">
+                <label for="statementAccountNumber">Account Number:</label>
+                <input type="text" id="statementAccountNumber" name="statementAccountNumber" required>
+            </div>
+            <button type="submit" class="btn">Generate Statement</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
